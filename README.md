@@ -92,10 +92,3 @@ The application uses Tailwind CSS with a custom color scheme:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details
-
-## env
-
-// .env.example
-API_KEY=your_api_key_here
-CSE_ID=your_api_key_here
-VITE_GOOGLE_API_KEY=your_key_here
