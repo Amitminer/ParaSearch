@@ -3,6 +3,10 @@ import { MessageCircle } from 'lucide-react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { motion } from 'framer-motion';
 
+
+const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
+const genAI = new GoogleGenerativeAI(apiKey);
+const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 /**
  * SearchBar Component
  * 
