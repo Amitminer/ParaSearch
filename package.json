@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm install && python ./src/app.py\" \"vite\"",
+    "dev": "concurrently \"python ./src/app.py\" \"vite\"",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
