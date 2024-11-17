@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"python ./src/app.py\" \"vite\"",
-    "build": "vite build",
+    "build": "concurrently \"python ./src/app.py\" \"vite build\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },
