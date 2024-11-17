@@ -3,9 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 
 /**
  * SearchResults Component
- * Displays search results in an animated list
+ * 
+ * Props:
+ * - `results`: Array of search results. Each result is an object with `link`, `title`, and `snippet` properties.
+ * - `isDarkMode`: Boolean indicating whether dark mode is active (used for potential styling purposes).
+ * 
+ * Description:
+ * - Renders a list of search results with animations for smooth appearance.
+ * - Displays a message if no results are available.
  */
 const SearchResults = memo(({ results, isDarkMode }) => {
+  // Display message if no results are found
   if (!results.length) {
     return (
       <motion.p
@@ -23,14 +31,15 @@ const SearchResults = memo(({ results, isDarkMode }) => {
       <AnimatePresence>
         {results.map((result, index) => (
           <motion.div
-            key={result.link}
+            key={result.link} // Unique key for each result
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            transition={{ duration: 0.3, delay: index * 0.1 }} // Staggered animation for each result
             className="p-6 bg-[#2a0052] rounded-xl border border-purple-500/30 
                      hover:border-purple-400/50 transition-all duration-200"
           >
+            {/* Animated clickable title */}
             <motion.a
               whileHover={{ x: 10 }}
               href={result.link}
@@ -40,6 +49,7 @@ const SearchResults = memo(({ results, isDarkMode }) => {
             >
               {result.title}
             </motion.a>
+            {/* Result snippet */}
             <p className="text-purple-200/80">{result.snippet}</p>
           </motion.div>
         ))}
