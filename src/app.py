@@ -43,5 +43,10 @@ def search():
     results = google_search(query, start=start, search_type=search_type)
     return jsonify(results)
 
+@app.route("/api/status", methods=["GET"])
+def status():
+    return jsonify({"message": "API is working!"})
+
 if __name__ == "__main__":
-    app.run(debug=False)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
