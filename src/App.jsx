@@ -36,8 +36,8 @@ function App() {
       //   `localhost:5000/api/search?q=${encodeURIComponent(query)}`
       // );
       const response = await fetch(
-        `https://parasearchbackend.onrender.com:5000/api/search?q=${encodeURIComponent(query)}`
-      );
+        `https://parasearchbackend.onrender.com/api/search?q=${encodeURIComponent(query)}`
+      );      
       
       if (!response.ok) throw new Error('Search request failed');
       
