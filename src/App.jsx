@@ -32,9 +32,13 @@ function App() {
     setAIResponse(null);
     
     try {
+      // const response = await fetch(
+      //   `localhost:5000/api/search?q=${encodeURIComponent(query)}`
+      // );
       const response = await fetch(
-        `http://127.0.0.1:5000/api/search?q=${encodeURIComponent(query)}`
+        `https://your-backend.onrender.com/api/search?q=${encodeURIComponent(query)}`
       );
+      
       if (!response.ok) throw new Error('Search request failed');
       
       const data = await response.json();
